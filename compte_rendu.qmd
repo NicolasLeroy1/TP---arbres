@@ -107,7 +107,7 @@ On peut visualiser l'arbre de décision obtenu en utilisant la fonction `plot_tr
 ```{python}
 #| fig-cap: Arbre de décision obtenu avec une profondeur maximale 12
 tree.plot_tree(classifier, filled=True, feature_names=['x1','x2']);
-tree.export_graphviz(classifier, out_file='tree.dot', filled=True, feature_names=['x1','x2'])
+tree.export_graphviz(classifier, out_file='dot/tree.dot', filled=True, feature_names=['x1','x2'])
 ```
 
 # Cinquième question : Efficacité de l'arbre de décision sur un nouveau jeu de donnée 
@@ -182,7 +182,7 @@ Exportons les deux arbres sous forme de fichier .dot :
 classifier_entropy = tree.DecisionTreeClassifier(max_depth=7, criterion='entropy')
 classifier_entropy.fit(train_x, train_y)
 tree.plot_tree(classifier, filled=True);
-tree.export_graphviz(classifier, out_file='tree_entropy_depth7.dot', filled=True)
+tree.export_graphviz(classifier, out_file='dot/tree_entropy_depth7.dot', filled=True)
 
 ```
 
@@ -192,7 +192,7 @@ tree.export_graphviz(classifier, out_file='tree_entropy_depth7.dot', filled=True
 classifier_gini = tree.DecisionTreeClassifier(max_depth=9, criterion='gini')
 classifier_gini.fit(train_x, train_y)
 tree.plot_tree(classifier, filled=True);
-tree.export_graphviz(classifier, out_file='tree_gini_depth9.dot', filled=True)
+tree.export_graphviz(classifier, out_file='dot/tree_gini_depth9.dot', filled=True)
 ```
 
 
